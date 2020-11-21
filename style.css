@@ -4,117 +4,138 @@
     box-sizing: border-box;
 }
 
-body{
-    background-image: url("pictures/Stockimage.jpg");
-    background-repeat: no-repeat; 
+html {
+    background-image: url("pictures/burgerbackground.jpg");
     background-position: center;
     background-attachment: fixed;       
     background-size: cover;
-    height:100%;
-    width:100%;
+    font-size: xx-large;
+    font-family: 'Lobster', cursive;
 }
 
-
-nav{
+.navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-   
+    color: white;
 }
 
 .nav-links { 
     display: flex;
     justify-content: space-around;
-    width: 60%;
     align-items: center;
-    font-weight: bold;
-    font-size: xx-large;
-    font-family: 'Lobster', cursive;
+}   
+
+.nav-links ul {
+    margin:0;
+    padding:0;
+    display:flex;
 }
 
-li {
+.nav-links li {
     list-style: none;
 }
 
-.burger{
-    display: none;
-}
-
-.burger div{
-    width:35px;
-    height:6px;
-    margin:5px;
-    background-color: ivory;
-}
-
-a{
+.nav-links li a {
     text-decoration: none;
-    color: rgba(20, 19, 19, 0.747);
+    color: #FFFFFF;
+    padding: 1rem;
+    display: block;
 }
 
-.text{
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width:30px;
+    height: 21px;
+}
+
+li.active {
+    text-decoration: underline;
+}
+
+.toggle-button .line {
+    height: 3px;
+    width:100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+h2 {
     font-family: 'Lobster', cursive;
-    color: rgba(245, 10, 127, 0.747);
-    padding: 20px;
+    color: #FFFFFF;
+    padding:20px;
+    font-size: xx-large;
 }
 
- button{
-     border: none;
-     background-color: transparent;
-     color: rgba(20, 19, 19, 0.747);
-     font-family: 'Lobster', cursive;
-     font-weight: bold;
-     font-size: xx-large;
-     cursor: pointer;
-     
+h1,h3 {
+    margin: 50px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+ button {
+    background-color:#202020;
+    font-family: 'Lobster', cursive;
+    font-size: x-large;
+    cursor: pointer;
+    margin:   20px;
+    padding: 15px 30px;
+    border: 2px solid #ffdf6c;
+    color: #FFFFFF;
  }
 
+.center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 
-
-@media screen and (max-width:780px){
-    .text{
-        display:none
+@media screen and (max-width:680px){
+    html {
+        font-size: x-large;
+    }
+    .navbar {
+        background-color: #000000;
+    }
+    nav.navbar {
+        position: absolute;
+        width: 100%;
+        top: 0; 
     }
 
-    html, body{
-        overflow-x: hidden;
+   .toggle-button {
+       display: flex;
+   }
+   h1 {
+    margin: 90px;
+    padding: 20px;
+   }
+   .nav-links {
+       width: 100%;
+       display: none;
+   }
+   .navbar {
+       flex-direction: column;
+       align-items: flex-start;
+   }
+    .nav-links ul {
+        width: 100%;
+        flex-direction: column;    
     }
    
-    .nav-links{
-        right:0px;
-        position:fixed;
-        height: 80vh;
-        top:15vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width:30%;
-        transform: translateX(100%);
-        transition: transform 0.4s ease-in;
-        
-    }
-
     .nav-links li {
-        opacity: 0;
+        text-align: center;
     }
 
-    .burger{
-        display: block;
-        
-    }
+    .nav-links li a {
+        padding: .3rem 1rem
 }
-    
-.nav-active{
-    transform: translateX(0%);
-}
-
-@keyframes navLinkFade{
-    from{
-        opacity: 0;
-        transform: translateX(150px);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0px);
+    .nav-links.active {
+        display: flex;  
     }
 }

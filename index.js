@@ -1,19 +1,14 @@
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+const toggleButton=document.getElementsByClassName('toggle-button')[0]
+const navLinks=document.getElementsByClassName('nav-links')[0]
 
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active');
 
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.2s ease forwards`;
-            }
-        });
-    });
+toggleButton.addEventListener('click', () =>{
+    navLinks.classList.toggle('active')
+})
+
+
+function reserve() {
+    alert("The reserve feature is coming soon!");
 }
 
-navSlide();
+document.getElementById('reserveMessage').onclick = reserve;
