@@ -9,8 +9,7 @@ html {
     background-position: center;
     background-attachment: fixed;       
     background-size: cover;
-    font-size: xx-large;
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster', cursive;  
 }
 
 .navbar {
@@ -24,6 +23,7 @@ html {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-size: xx-large;
 }   
 
 .nav-links ul {
@@ -68,20 +68,30 @@ li.active {
 h2 {
     font-family: 'Lobster', cursive;
     color: #FFFFFF;
-    padding:20px;
-    font-size: xx-large;
+    padding: 22px;
+    font-size:xx-large;
 }
 
-h1,h3 {
-    margin: 50px;
+h3 {
     color: #FFFFFF;
     text-align: center;
+    position: relative;
+}
+
+.container {
+    padding-bottom: 20px;
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
 }
 
  button {
     background-color:#202020;
     font-family: 'Lobster', cursive;
-    font-size: x-large;
+    font-size: 2vw;
     cursor: pointer;
     margin:   20px;
     padding: 15px 30px;
@@ -95,10 +105,8 @@ h1,h3 {
     justify-content: center;
 }
 
-@media screen and (max-width:680px){
-    html {
-        font-size: x-large;
-    }
+@media screen and (max-width:550px){
+    
     .navbar {
         background-color: #000000;
     }
@@ -107,17 +115,15 @@ h1,h3 {
         width: 100%;
         top: 0; 
     }
-
+ 
    .toggle-button {
        display: flex;
    }
-   h1 {
-    margin: 90px;
-    padding: 20px;
-   }
+
    .nav-links {
        width: 100%;
        display: none;
+       font-size: small;
    }
    .navbar {
        flex-direction: column;
